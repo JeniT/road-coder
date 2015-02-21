@@ -1,0 +1,34 @@
+<template name="addressform">
+  <form id="addressform" class="form-horizontal">
+    {{> geolocation}}
+    {{> userDetails}}
+    <div class="form-group">
+      <label for="number" class="col-sm-2 control-label">Building name/number</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" id="number" placeholder="No.">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="street" class="col-sm-2 control-label">Street</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control typeahead" id="street" placeholder="Street" autocomplete="off" spellcheck="off" data-source="streetSearch">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="town" class="col-sm-2 control-label">Town/Locality</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control typeahead" id="town" placeholder="Town" autocomplete="off" spellcheck="off" data-source="townSearch">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-2">
+        {{#if currentUser}}
+          <button type="submit" class="btn btn-default">Collect</button>
+        {{else}}
+          <button type="submit" class="btn btn-default" disabled="true" aria-describedby="collectHelp">Collect</button>
+          <span id="collectHelp" class="help-block">Sign in to collect addresses</span>
+        {{/if}}
+      </div>
+    </div>
+  </form>
+</template>
