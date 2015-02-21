@@ -1,3 +1,9 @@
 <template name="address">
-  <li>{{number}} {{street}}, {{town}} [{{user}}, {{timestamp}} ({{geo.latitude}}, {{geo.longitude}})]</li>
+  <li class="list-group-item">
+    {{#if geo}}
+      <span class="badge">{{lat}}, {{lng}}</span>
+    {{/if}}
+    <h4 class="list-group-item-heading">{{number}} {{street}}, {{town}}</h4>
+    <p class="list-group-item-text">{{user}}, {{dateTime}}</p>
+  </li>
 </template>
