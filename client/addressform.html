@@ -18,13 +18,18 @@
           <div class="form-group">
             <label for="number" class="col-sm-2 control-label">What building are you outside?</label>
             <div class="col-sm-2">
-              <input type="text" class="form-control" id="number" placeholder="No.">
+              <input type="text" class="form-control input-lg" id="number" placeholder="No.">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+              <button type="submit" class="btn btn-default">Collect</button>
             </div>
           </div>
           <div class="form-group">
             <label for="change" class="col-sm-2 control-label">Are the numbers going up or down?</label>
             <div class="col-sm-2">
-              <select id="change">
+              <select id="change" class="form-control input-sm">
                 <option value="increment" selected="selected">going up</option>
                 <option value="decrement">going down</option>
               </select>
@@ -33,12 +38,7 @@
           <div class="form-group">
             <label for="changeBy" class="col-sm-2 control-label">How much are they going {{increment}} by?</label>
             <div class="col-sm-2">
-              <input id="changeBy" type="number" value="2" />
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-2">
-              <button type="submit" class="btn btn-default">Collect</button>
+              <input class="form-control input-sm" id="changeBy" type="number" value="2" />
             </div>
           </div>
         </div>
