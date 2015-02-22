@@ -2,3 +2,5 @@
 .DS_Store
 
 .config/development/settings.json
+
+.config/production/settings.json
