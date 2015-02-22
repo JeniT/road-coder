@@ -1,47 +1,48 @@
 <template name="addressform">
   <div class="{{#if noCurrentUser}}hidden{{/if}}">
-    <form id="addressform" class="form-horizontal">
+    <form id="addressform" class="form col-sm-4">
       <div class="{{#if townEmpty}}hidden{{/if}}">
         <div class="{{#if streetEmpty}}hidden{{/if}}">
-          <div class="form-group">
-            <label for="number" class="col-sm-2 control-label">What building are you outside?</label>
-            <div class="col-sm-2">
-              <input type="text" class="form-control input-lg" id="number" placeholder="No.">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group form-group-lg">
+                <label for="number" class="control-label">What's the building?</label>
+                <input type="text" class="form-control" id="number" placeholder="No.">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-2">
-              <button type="submit" class="btn btn-default">Collect</button>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="change" class="col-sm-2 control-label">Are the numbers going up or down?</label>
-            <div class="col-sm-2">
-              <select id="change" class="form-control input-sm">
-                <option value="increment" selected="selected">going up</option>
-                <option value="decrement">going down</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="changeBy" class="col-sm-2 control-label">How much are they going {{increment}} by?</label>
-            <div class="col-sm-2">
-              <input class="form-control input-sm" id="changeBy" type="number" value="2" />
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="form-group col-xs-6">
+                  <button id="skip" class="btn btn-default btn-lg col-sm-12">Skip</button>
+                </div>
+                <div class="form-group col-xs-6">
+                  <button id="collect" type="submit" class="btn btn-primary btn-lg col-sm-12">Collect</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group form-group-sm col-xs-6">
+                  <label for="change" class="control-label hidden">Are the numbers going up or down?</label>
+                  <select id="change" class="form-control">
+                    <option value="increment" selected="selected">going up</option>
+                    <option value="decrement">going down</option>
+                  </select>
+                </div>
+                <div class="form-group form-group-sm col-xs-6">
+                  <label for="changeBy" class="control-label hidden">How much are they going {{increment}} by?</label>
+                  <input class="form-control" id="changeBy" type="number" value="2" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="street" class="col-sm-2 control-label">What's the name of the street?</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control typeahead" id="street" placeholder="Street" autocomplete="off" spellcheck="off" data-source="streetSearch" data-min-length="5" data-autocompleted="streetSelected" data-selected="streetSelected">
-          </div>
+        <div class="form-group row">
+          <label for="street" class="control-label col-sm-6">What's the name of the street?</label>
+          <input type="text" class="form-control col-sm-6 typeahead" id="street" placeholder="Street" autocomplete="off" spellcheck="off" data-source="streetSearch" data-min-length="5" data-autocompleted="streetSelected" data-selected="streetSelected">
         </div>
       </div>
-      <div class="form-group">
-        <label for="town" class="col-sm-2 control-label">What area are you in?</label>
-        <div class="col-sm-2">
-          <input type="text" class="form-control typeahead" id="town" placeholder="Town" autocomplete="off" spellcheck="off" data-source="townSearch" data-min-length="2" data-autocompleted="townSelected" data-selected="townSelected">
-        </div>
+      <div class="form-group row">
+        <label for="town" class="control-label col-sm-6">What area are you in?</label>
+        <input type="text" class="form-control col-sm-6 typeahead" id="town" placeholder="Town" autocomplete="off" spellcheck="off" data-source="townSearch" data-min-length="2" data-autocompleted="townSelected" data-selected="townSelected">
       </div>
     </form>
   </div>
